@@ -1,7 +1,7 @@
-import Projects from '../../components/Projects/Projects';
-import type { Project } from '../../types';
+ import Projects from '../../components/Projects/Projects';
+ // import type { Project } from '../../types';
 
-export default function Home() {
+ export default function Home() {
   
 
   return (
