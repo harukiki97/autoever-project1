@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logoImg from "../../assets/logo.png";
 import styles from "./Header.module.css";
 
@@ -10,10 +11,10 @@ function Header() {
         <h1>가민's 포트폴리오</h1>
       </div>
       <nav className={styles.nav}>
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#blog">Blog</a>
-        <a href="#guestbook">GuestBook</a>
+        <Link to="/">Home</Link>
+        <Link to="/projects">Projects</Link>
+        <Link to="/blogs">Blog</Link>
+        <Link to="/guestbook">GuestBook</Link>
       </nav>
     </header>
   );
