@@ -1,9 +1,14 @@
+.about {
+  margin-bottom: 72px;
+}
+
 .idCard {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 48px;
-  margin-bottom: 48px;
+  margin-top: 48px;
+  margin-bottom: 64px;
 }
 
 .idText {

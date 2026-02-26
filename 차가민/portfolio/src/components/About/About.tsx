@@ -3,7 +3,7 @@ import styles from "../About/About.module.css";
 
 function About() {
   return (
-    <section id="about">
+    <section id="about" className={styles.about}>
       <div className={styles.idCard}>
         <div className="idProfile">
           {/* 이미지 크기 임시 */}
