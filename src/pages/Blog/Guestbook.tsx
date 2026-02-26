@@ -1,131 +1,105 @@
-import { useState, useEffect } from 'react';
+// src/components/Guestbook.tsx
+import React, { useState, useEffect } from 'react';
 import { supabase } from '../../api/supabase';
-import type { GuestbookEntry } from '../../types';
 
-export default function Guestbook() {
-  const [form, setForm] = useState<GuestbookEntry>({
+export const Guestbook: React.FC = () => {
+  const [messages, setMessages] = useState<any[]>([]);
+  // 스키마에 정의된 컬럼들로 state 구성
+  const [formData, setFormData] = useState({
     visitor_name: '',
     main_stack: '',
-    experience: 0,
     mbti: '',
-    phone: '',
     comment: '',
-    github_url: '',
-    is_hidden: false
+    github_url: ''
   });
 
-  const [posts, setPosts] = useState<GuestbookEntry[]>([]);
-  const [loading, setLoading] = useState(false);
-
-  const fetchPosts = async () => {
+  const fetchMessages = async () => {
     const { data, error } = await supabase
       .from('guestbook')
       .select('*')
       .order('created_at', { ascending: false });
-
-    if (error) console.error("로드 실패:", error);
-    else setPosts(data || []);
+    
+    if (error) console.error("데이터 로드 실패:", error.message);
+    else setMessages(data || []);
   };
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
+  useEffect(() => { fetchMessages(); }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
+    // 필수 값 체크
+    if (!formData.visitor_name || !formData.comment) return;
 
-    try {
-      // 💡 콘솔에서 전송 전 데이터를 확인해보세요
-      console.log("전송 데이터:", form);
+    const { error } = await supabase
+      .from('guestbook')
+      .insert([formData]); // 객체 통째로 전달
 
-      const { error } = await supabase.from('guestbook').insert([form]);
-      if (error) throw error;
-
-      alert("방명록이 등록되었습니다! 🎉");
-      
-      // 폼 초기화 (모든 필드를 비워줍니다)
-      setForm({
-        visitor_name: '',
-        main_stack: '',
-        experience: 0,
-        mbti: '',
-        phone: '',
-        comment: '',
-        github_url: '',
-        is_hidden: false
-      });
-      
-      fetchPosts();
-    } catch (error: any) {
-      console.error("저장 실패:", error.message);
+    if (error) {
       alert("등록 실패: " + error.message);
-    } finally {
-      setLoading(false);
+    } else {
+      setFormData({ visitor_name: '', main_stack: '', mbti: '', comment: '', github_url: '' });
+      fetchMessages();
     }
   };
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>✍️ 방명록 작성</h1>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxWidth: '400px' }}>
-        
-        {/* 모든 입력 필드에 onChange가 올바르게 설정되어 있는지 확인하세요 */}
-        <input 
-          placeholder="이름" required 
-          value={form.visitor_name} 
-          onChange={e => setForm({...form, visitor_name: e.target.value})} 
-        />
-        <input 
-          placeholder="주요 기술 스택" required 
-          value={form.main_stack} 
-          onChange={e => setForm({...form, main_stack: e.target.value})} 
-        />
-        <input 
-          placeholder="MBTI" maxLength={4} 
-          value={form.mbti} 
-          onChange={e => setForm({...form, mbti: e.target.value})} 
-        />
-        <input 
-          type="number" placeholder="경력(년)" 
-          value={form.experience} 
-          onChange={e => setForm({...form, experience: Number(e.target.value)})} 
-        />
-        <input 
-          type="tel" placeholder="연락처" 
-          value={form.phone} 
-          onChange={e => setForm({...form, phone: e.target.value})} 
-        />
-        <input 
-          placeholder="GitHub URL" 
-          value={form.github_url} 
-          onChange={e => setForm({...form, github_url: e.target.value})} 
-        />
+    <div className="guestbook-section">
+      <h2 className="section-title">Guestbook</h2>
+      
+      {/* 피그마의 form 양식 반영 */}
+      <form onSubmit={handleSubmit} className="guestbook-form" style={formStyle}>
+        <div style={inputGroupStyle}>
+          <input 
+            placeholder="성함 (visitor_name)" 
+            value={formData.visitor_name}
+            onChange={e => setFormData({...formData, visitor_name: e.target.value})}
+            style={inputStyle}
+          />
+          <input 
+            placeholder="주요 스택 (main_stack)" 
+            value={formData.main_stack}
+            onChange={e => setFormData({...formData, main_stack: e.target.value})}
+            style={inputStyle}
+          />
+          <input 
+            placeholder="MBTI" 
+            value={formData.mbti}
+            onChange={e => setFormData({...formData, mbti: e.target.value})}
+            style={inputStyle}
+          />
+        </div>
         <textarea 
-          placeholder="응원 한마디" required
-          value={form.comment} 
-          onChange={e => setForm({...form, comment: e.target.value})} 
+          placeholder="방명록 내용 (comment)" 
+          value={formData.comment}
+          onChange={e => setFormData({...formData, comment: e.target.value})}
+          style={textareaStyle}
         />
-        
-        <button type="submit" disabled={loading}>
-          {loading ? '등록 중...' : '방명록 남기기'}
-        </button>
+        <button type="submit" style={submitBtnStyle}>방명록 남기기</button>
       </form>
 
-      <hr />
-
-      <div className="guestbook-list">
-        <h3>최근 방명록 목록</h3>
-        {posts.map((post: any) => (
-          <div key={post.id} style={{ border: '1px solid #ddd', padding: '15px', marginBottom: '10px', borderRadius: '8px' }}>
-            <h4>{post.visitor_name} <small>({post.mbti})</small></h4>
-            <p><strong>기술 스택:</strong> {post.main_stack} / <strong>경력:</strong> {post.experience}년</p>
-            <p><strong>내용:</strong> {post.comment}</p>
-            {post.github_url && <p><a href={post.github_url} target="_blank">GitHub 바로가기</a></p>}
-            <small style={{ color: '#888' }}>{new Date(post.created_at).toLocaleString()}</small>
+      {/* 리스트 출력 부분 */}
+      <div className="message-list" style={{ marginTop: '40px' }}>
+        {messages.map(msg => (
+          <div key={msg.id} style={msgCardStyle}>
+            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+              <span style={{ fontWeight: 'bold' }}>{msg.visitor_name}</span>
+              <span style={tagStyle}>{msg.main_stack}</span>
+              <span style={{ color: '#888', fontSize: '12px' }}>{msg.mbti}</span>
+            </div>
+            <p style={{ margin: '10px 0' }}>{msg.comment}</p>
+            {msg.github_url && <a href={msg.github_url} style={{ fontSize: '12px' }}>GitHub</a>}
           </div>
         ))}
       </div>
     </div>
   );
-}
+};
+
+// --- 스타일 (생략/이전 답변 참고) ---
+const formStyle: React.CSSProperties = { display: 'flex', flexDirection: 'column', gap: '15px', background: '#fff', padding: '20px', borderRadius: '12px', border: '1px solid #eee' };
+const inputGroupStyle: React.CSSProperties = { display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px' };
+const inputStyle: React.CSSProperties = { padding: '12px', border: '1px solid #ddd', borderRadius: '8px' };
+const textareaStyle: React.CSSProperties = { padding: '12px', border: '1px solid #ddd', borderRadius: '8px', minHeight: '100px' };
+const submitBtnStyle: React.CSSProperties = { padding: '15px', backgroundColor: '#3B82F6', color: '#fff', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold' };
+const msgCardStyle: React.CSSProperties = { padding: '20px', borderBottom: '1px solid #f0f0f0' };
+const tagStyle: React.CSSProperties = { background: '#EFF6FF', color: '#3B82F6', padding: '2px 8px', borderRadius: '4px', fontSize: '12px' };
