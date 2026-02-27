@@ -1,0 +1,91 @@
+export type TechItem = {
+  id: string; // 내부 식별 이름
+  name: string; // ui 표시 이름
+  icon: string; // 아이콘 이름
+  color: string; // 색상 코드
+};
+
+export const techData = [
+  {
+    category: "Language",
+    items: [
+      { name: "C", icon: "c", color: "A8B9CC" },
+      { name: "C++", icon: "cplusplus", color: "00599C" },
+      { name: "Dart", icon: "dart", color: "0175C2" },
+      { name: "Java", icon: "java", color: "007396" },
+      { name: "JavaScript", icon: "javascript", color: "F7DF1E" },
+      { name: "Kotlin", icon: "kotlin", color: "7F52FF" },
+      { name: "Python", icon: "python", color: "3776AB" },
+      { name: "Swift", icon: "swift", color: "FA7343" },
+      { name: "TypeScript", icon: "typescript", color: "3178C6" },
+    ],
+  },
+  {
+    category: "Frontend",
+    items: [
+      { name: "Angular", icon: "angular", color: "DD0031" },
+      { name: "Bootstrap", icon: "bootstrap", color: "7952B3" },
+      { name: "Next.js", icon: "nextdotjs", color: "000000" },
+      { name: "React", icon: "react", color: "61DAFB" },
+      { name: "Sass", icon: "sass", color: "CC6699" },
+      { name: "Styled Components", icon: "styledcomponents", color: "DB7093" },
+      { name: "Tailwind CSS", icon: "tailwindcss", color: "06B6D4" },
+      { name: "Vue", icon: "vuedotjs", color: "4FC08D" },
+      { name: "React Query", icon: "reactquery", color: "FF4154" },
+      { name: "Recoil", icon: "recoil", color: "3578E5" },
+      { name: "Redux", icon: "redux", color: "764ABC" },
+    ],
+  },
+  {
+    category: "Backend",
+    items: [
+      { name: "Django", icon: "django", color: "092E20" },
+      { name: "Express", icon: "express", color: "000000" },
+      { name: "FastAPI", icon: "fastapi", color: "009688" },
+      { name: "Fastify", icon: "fastify", color: "000000" },
+      { name: "Flask", icon: "flask", color: "000000" },
+      { name: "NestJS", icon: "nestjs", color: "E0234E" },
+      { name: "Node.js", icon: "nodedotjs", color: "339933" },
+      { name: "Spring", icon: "spring", color: "6DB33F" },
+    ],
+  },
+  {
+    category: "Mobile",
+    items: [
+      { name: "Android", icon: "android", color: "3DDC84" },
+      { name: "Android Studio", icon: "androidstudio", color: "3DDC84" },
+      { name: "Expo", icon: "expo", color: "000020" },
+      { name: "Flutter", icon: "flutter", color: "02569B" },
+      { name: "Jetpack", icon: "jetpackcompose", color: "4285F4" },
+      { name: "React Native", icon: "react", color: "61DAFB" },
+      { name: "SwiftUI", icon: "swift", color: "FA7343" },
+    ],
+  },
+  {
+    category: "Others",
+    items: [
+      { name: "Firebase", icon: "firebase", color: "FFCA28" },
+      { name: "MongoDB", icon: "mongodb", color: "47A248" },
+      { name: "MySQL", icon: "mysql", color: "4479A1" },
+      { name: "PostgreSQL", icon: "postgresql", color: "4169E1" },
+      { name: "Redis", icon: "redis", color: "DC382D" },
+      { name: "Supabase", icon: "supabase", color: "3ECF8E" },
+      { name: "Apache", icon: "apache", color: "D22128" },
+      { name: "AWS", icon: "amazonaws", color: "232F3E" },
+      { name: "Cloudflare", icon: "cloudflare", color: "F38020" },
+      { name: "Docker", icon: "docker", color: "2496ED" },
+      { name: "Google Cloud", icon: "googlecloud", color: "4285F4" },
+      { name: "Heroku", icon: "heroku", color: "430098" },
+      { name: "Kubernetes", icon: "kubernetes", color: "326CE5" },
+      { name: "Nginx", icon: "nginx", color: "009639" },
+      { name: "Vercel", icon: "vercel", color: "000000" },
+      { name: "ESLint", icon: "eslint", color: "4B32C3" },
+      { name: "Figma", icon: "figma", color: "F24E1E" },
+      { name: "Git", icon: "git", color: "F05032" },
+      { name: "GitHub", icon: "github", color: "181717" },
+      { name: "GitLab", icon: "gitlab", color: "FC6D26" },
+      { name: "Notion", icon: "notion", color: "000000" },
+      { name: "Slack", icon: "slack", color: "4A154B" },
+    ],
+  },
+];
