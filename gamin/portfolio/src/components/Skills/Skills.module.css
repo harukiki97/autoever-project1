@@ -1,4 +1,8 @@
-.skills {
-  padding-top: 48px;
-  padding-bottom: 48px;
+.skills img {
+  width: 100px;
+}
+
+.techList {
+  display: flex;
+  gap: 24px;
 }
