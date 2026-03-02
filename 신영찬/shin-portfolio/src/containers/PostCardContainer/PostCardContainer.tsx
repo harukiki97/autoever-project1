@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import PostItem from '../../components/PostItem/PostItem';
-import styles from './PostContainer.module.css';
+import PostCardItem from '../../components/PostCardtItem/PostCardItem';
+import styles from './PostCardContainer.module.css';
 import { supabase } from '../../api/supabase';
 
 const PostContainer = () => {
@@ -22,7 +22,7 @@ const PostContainer = () => {
             <h1 className={styles.title}>Study Note</h1>
             <div className={styles.post_section}>
                 {posts.map((post, index) => (
-                    <PostItem key={post.id} post={post} index={index} />
+                    <PostCardItem key={post.id} post={post} index={index} />
                 ))}
             </div>
         </div>

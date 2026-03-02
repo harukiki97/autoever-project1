@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import styles from './PostItem.module.css';
+import styles from './PostCardItem.module.css';
 
 interface PostItemProps {
     post: any;

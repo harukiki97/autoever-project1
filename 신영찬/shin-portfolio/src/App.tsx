@@ -7,6 +7,7 @@ import PostDetail from './pages/PostDetail/PostDetail';
 import styles from './App.module.css';
 import ProjectDetail from './pages/ProjectDetail/ProjectDetail';
 import Projects from './pages/Projects/Projects';
+import Posts from './pages/Posts/Posts';
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/projects' element={<Projects />} />
-          <Route path="/posts/:slug" element={<PostDetail />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
+          <Route path='/posts' element={<Posts />} />
+          <Route path="/posts/:slug" element={<PostDetail />} />
         </Routes>
         <FooterContainer />
       </BrowserRouter>

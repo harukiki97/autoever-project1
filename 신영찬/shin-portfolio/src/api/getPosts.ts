@@ -22,6 +22,16 @@ export const getPost = async (slug: string) => {
   return data;
 };
 
+export const getPosts = async () => {
+  const { data, error } = await supabase
+    .from('posts')
+    .select('id, title, summary, slug, created_at, type')
+    .order('created_at', { ascending: false });
+
+  if (error) throw error;
+  return data;
+};
+
 export const incrementViews = async (slug: string, currentViews: number) => {
   const { error } = await supabase
     .from('posts')
