@@ -49,3 +49,17 @@ export interface ProjectWithDetails extends Project {
 
 // 경력 사항 제목 타입
 export type CareerCategory = "교육" | "어학 및 자격증" | "활동";
+
+// 경력 사항 상세 내용 데이터 타입 정의
+export type CareerItem = {
+  id: number;
+  period: string;
+  title: string;
+  desc?: string;
+  desc_detail?: string;
+};
+
+export type Career = {
+  category: CareerCategory;
+  items: CareerItem[];
+};
