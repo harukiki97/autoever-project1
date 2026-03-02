@@ -7,5 +7,17 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 3rem;
+}
+
+.careerContents {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
