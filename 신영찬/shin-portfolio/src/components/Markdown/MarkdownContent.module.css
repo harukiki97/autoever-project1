@@ -5,13 +5,22 @@
     line-height: 1.5;
 }
 
+.content h1,
 .content h2 {
-    font-size: 32px;
     font-weight: bold;
-    margin-top: 32px;
     margin-bottom: 16px;
     padding-bottom: 16px;
     border-bottom: 1px solid var(--color-blue-light-gray);
+}
+
+.content h1 {
+    font-size: 40px;
+    margin-top: 128px;
+}
+
+.content h2 {
+    font-size: 32px;
+    margin-top: 64px;
 }
 
 .content h3 {
@@ -20,7 +29,8 @@
     margin-top: 16px;
 }
 
-.content p {
+.content p,
+.content a {
     line-height: 1.7;
 }
 
@@ -87,6 +97,10 @@
     .content {
         font-size: 16px;
         padding: 0;
+    }
+
+    .content h1 {
+        font-size: 32px;
     }
 
     .content h2 {
