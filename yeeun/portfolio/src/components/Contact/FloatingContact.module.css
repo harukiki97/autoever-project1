@@ -1,0 +1,42 @@
+.floatingContact {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 2.5rem;
+
+  background: #ffffff;
+  border-radius: 50px;
+
+  box-shadow:
+    0 20px 40px rgba(0, 70, 255, 0.15),
+    0 4px 10px rgba(0, 0, 0, 0.08);
+
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.floatingContact:hover {
+  transform: translateX(-50%) translateY(-4px);
+}
+
+.floatingContact a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0046ff;
+  transition: opacity 0.2s ease;
+}
+
+.floatingContact a:not(:last-child)::after {
+  content: "|";
+  margin-left: 1.5rem;
+  color: #cccccc;
+}
+
+.floatingContact a:hover {
+  opacity: 0.6;
+}
