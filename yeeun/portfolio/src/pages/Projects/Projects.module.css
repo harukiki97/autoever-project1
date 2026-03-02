@@ -8,6 +8,7 @@
 
 .projectList {
   display: flex;
+  justify-content: space-between;
   gap: 3rem;
   flex-wrap: wrap;
   width: 100%;
@@ -17,4 +18,5 @@
   all: unset;
   text-align: center;
   color: #0046ff;
+  cursor: pointer;
 }
