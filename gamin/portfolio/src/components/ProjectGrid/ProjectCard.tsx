@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { Project } from "../../types/project";
 import { techMap } from "../../utils/getIcons";
+import styles from "./ProjectCard.module.css";
 
 interface ProjectCardProps {
   project: Project;
@@ -9,6 +10,7 @@ interface ProjectCardProps {
 
 function ProjectCard({ project, layout }: ProjectCardProps) {
   const isVertical = layout === "vertical";
+  const layoutClass = isVertical ? styles.vertical : styles.horizontal;
 
   const formatDate = (dateString: string) => {
     if (!dateString) return "";
@@ -42,7 +44,7 @@ function ProjectCard({ project, layout }: ProjectCardProps) {
   };
 
   return (
-    <Link to={`/projects/${project.slug}`}>
+    <Link to={`/projects/${project.slug}`} className={`${layoutClass}`}>
       {/* 썸네일 */}
       <div>
         {project.thumbnail_url ? (
