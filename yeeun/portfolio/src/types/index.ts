@@ -30,6 +30,7 @@ export interface Project {
   end_date?: string | null;
   thumbnail_url?: string | null;
   is_team?: boolean | null;
+  summary: string;
   tech_stacks?: string | null;
   created_at: string | Date;
 }
