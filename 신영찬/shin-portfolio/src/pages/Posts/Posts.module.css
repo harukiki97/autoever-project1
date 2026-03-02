@@ -8,7 +8,7 @@
 }
 
 @media (max-width: 768px) {
-    .home {
+    .posts {
         padding: 0 40px;
         width: 100%;
     }
