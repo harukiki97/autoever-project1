@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import styles from './PostDetail.module.css';
 import { getPost, incrementViews } from '../../api/getPosts';
 import DividerSecondary from '../../components/Divider/DividerSecondary';
@@ -37,8 +37,6 @@ const PostDetail = () => {
 
     return (
         <div className={styles.container}>
-            <Link to="/" className={styles.back_btn}>← Back to Home</Link>
-
             <header className={styles.title_section}>
                 <h1 className={styles.title}>{post.title}</h1>
                 <div className={styles.info_section}>
