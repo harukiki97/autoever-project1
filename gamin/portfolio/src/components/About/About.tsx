@@ -5,17 +5,18 @@ function About() {
   return (
     <section id="about" className={styles.about}>
       <div className={styles.idCard}>
-        <div className="idProfile">
-          {/* 이미지 크기 임시 */}
-          <img src={profileImg} alt="가민의 프로필 사진" width={440} />
-        </div>
-        <div className={styles.idText}>
+        <img
+          src={profileImg}
+          alt="가민의 프로필 사진"
+          className={styles.profileImg}
+        />
+        <div className="idText">
           <h1 className="name">차가민</h1>
           <p className="role">Full-stack Developer</p>
         </div>
       </div>
 
-      <div className={styles.description}>
+      <div className={styles.bio}>
         <p>
           {" "}
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci

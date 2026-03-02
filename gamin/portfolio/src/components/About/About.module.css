@@ -1,22 +1,24 @@
 .about {
-  margin-bottom: 72px;
+  margin-top: 48px;
 }
 
 .idCard {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
   gap: 48px;
-  margin-top: 48px;
-  margin-bottom: 64px;
+  align-items: center;
 }
 
-.idText {
-  text-align: left;
+.profileImg {
+  width: 440px;
+  height: 440px;
+  object-fit: cover; /* 사진 비율이 깨지지 않고 꽉 차게 잘리도록 설정 */
+  border-radius: 50%;
 }
 
-.description {
+.bio {
+  padding: 64px;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 32px;
 }
