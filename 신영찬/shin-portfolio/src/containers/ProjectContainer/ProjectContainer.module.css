@@ -37,7 +37,7 @@
         /* 한 줄에 하나, 아이템의 범위는 0~300 */
         grid-template-columns: minmax(0, 300px);
         justify-content: center;
-        gap: 16px;
+        gap: 64px;
         padding: 20px 0;
     }
 }

@@ -9,13 +9,26 @@ interface ProjectContainerProps {
 
 const ProjectContainer = ({ limit }: ProjectContainerProps) => {
     const [projects, setProjects] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        getCardProjects().then((data) => {
-            const displayData = limit ? data.slice(0, limit) : data;
-            setProjects(displayData);
-        });
-    }, [limit]); // limit이 바뀌면 refresh
+        const fetchProjects = async () => {
+            try {
+                setLoading(true); // 데이터 fetch 시작 시 로딩 활성화
+                const data = await getCardProjects();
+                const displayData = limit ? data.slice(0, limit) : data;
+                setProjects(displayData);
+            } catch (error) {
+                console.error('프로젝트 목록 로드 실패:', error);
+            } finally {
+                setLoading(false); // 성공/실패 여부와 상관없이 로딩 종료
+            }
+        };
+
+        fetchProjects();
+    }, [limit]); // limit이 변경될 때마다 다시 실행
+
+    if (loading) return <div className={styles.loading}>로딩 중...</div>;
 
     return (
         <div className={styles.container}>

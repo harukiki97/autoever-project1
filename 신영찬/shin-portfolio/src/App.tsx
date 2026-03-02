@@ -8,6 +8,7 @@ import styles from './App.module.css';
 import ProjectDetail from './pages/ProjectDetail/ProjectDetail';
 import Projects from './pages/Projects/Projects';
 import Posts from './pages/Posts/Posts';
+import GuestBook from './pages/GuestBook/GuestBook';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path='/posts' element={<Posts />} />
           <Route path="/posts/:slug" element={<PostDetail />} />
+          <Route path="/guestbook" element={<GuestBook />} />
         </Routes>
         <FooterContainer />
       </BrowserRouter>
