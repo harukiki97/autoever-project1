@@ -25,7 +25,7 @@ const PostDetail = () => {
                     incrementViews(slug, data.views || 0);
                 }
             } catch (error) {
-                console.error('Error fetching post:', error);
+                console.error('포스트 가져오기 실패 : ', error);
             } finally {
                 setLoading(false);
             }
@@ -34,7 +34,7 @@ const PostDetail = () => {
         fetchPost();
     }, [slug]);
 
-    if (loading) return <div className={styles.loading}>Loading...</div>;
+    if (loading) return <div className={styles.loading}>로딩 중...</div>;
     if (!post) return <div className={styles.error}>포스트를 찾을 수 없습니다.</div>;
 
     return (

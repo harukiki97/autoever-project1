@@ -137,6 +137,18 @@
     margin: 64px 0;
 }
 
+.loading,
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding-top: 240px;
+    font-size: 64px;
+    font-weight: bold;
+}
+
 @media (max-width: 768px) {
     .back_btn {
         font-size: 14px;
