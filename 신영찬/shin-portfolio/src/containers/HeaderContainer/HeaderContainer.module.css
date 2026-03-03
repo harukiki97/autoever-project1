@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+    /* 화면 최상단에 고정하기 위함 */
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: var(--color-blue-white);
+}

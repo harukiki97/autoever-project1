@@ -1,0 +1,29 @@
+.icon_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.name {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .name {
+        font-size: 14px;
+    }
+}

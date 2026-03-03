@@ -1,0 +1,23 @@
+.introduce_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.subtitle {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.what_can_i_do {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.what_can_i_do p {
+    font-size: 16px;
+}

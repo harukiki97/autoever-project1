@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.date_section {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 8px;
+    min-width: 200px;
+    flex-shrink: 0;
+}
+
+.icon {
+    width: 12px;
+    height: 12px;
+}
+
+.date {
+    font-size: 16px;
+}
+
+.info_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.description {
+    color: var(--color-blue-gray);
+}
+
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 16px;
+    }
+}

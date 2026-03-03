@@ -1,0 +1,74 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    flex-wrap: wrap;
+    row-gap: 24px; /* 페이지가 줄어들었을 때 title_section과의 gap을 주기 위함 */
+}
+
+.title_section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    gap: 24px;
+    margin-left: 60px;
+}
+
+.logo {
+    width: 70px;
+    height: 74px;
+    object-fit: contain;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    white-space: nowrap; /* 줄바꿈이 안 됐으면 좋겠음 */
+    flex-shrink: 0; /* 크기 줄어듬 방지 */
+}
+
+.nav_section {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 24px;
+    margin-right: 60px;
+}
+
+.nav_item {
+    text-decoration: none;
+    font-size: 16px;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+.nav_item:hover {
+    color: var(--color-hover);
+}
+
+@media (max-width: 768px) {
+    .header {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .title_section, .nav_section {
+        margin: 0;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50.8px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+    
+    .nav_section {
+        justify-content: center;
+    }
+}

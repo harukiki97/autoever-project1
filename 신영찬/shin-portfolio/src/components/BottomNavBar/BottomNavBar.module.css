@@ -1,0 +1,64 @@
+.nav_container {
+    display: flex;
+    justify-content: space-around;
+    gap: 8px;
+
+    /* 화면 정 중앙에 배치하기 위함 */
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: fixed;
+    bottom: 24px;
+
+    z-index: 1000;
+    border: 1px solid rgba(0, 70, 255, 0.2);
+    border-radius: 100px;
+    background: rgba(230, 237, 255, 0.65);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    width: 300px;
+    height: auto;
+    min-height: auto;
+    padding: 8px;
+}
+
+.nav_container :global(a) {
+    padding: 16px;
+    width: 100%;
+    background: transparent;
+    color: var(--color-blue-black);
+    text-align: center;
+    transition: 0.25s;
+    border-radius: 100px;
+    text-decoration: none;
+}
+
+.nav_container :global(a.active),
+.nav_container :global(a:hover) {
+    background: var(--color-secondary);
+}
+
+@media (max-width: 1024px) {
+    .nav_container {
+        width: 250px;
+        padding: 6px;
+    }
+
+    .nav_container :global(a) {
+        padding: 12px 8px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav_container {
+        width: 200px;
+        padding: 4px;
+        bottom: 16px;
+    }
+
+    .nav_container :global(a) {
+        padding: 8px 4px;
+        font-size: 12px;
+    }
+}

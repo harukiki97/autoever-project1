@@ -1,0 +1,73 @@
+.profile_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.profile_image {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.introduce_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+.name {
+    font-size: 64px;
+    font-weight: bold;
+}
+
+.job {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .profile_container {
+        flex-direction: column;
+    }
+
+    .profile_image {
+        width: 300px;
+        height: 300px;
+        margin: 0;
+    }
+
+    .introduce_section {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .name {
+        font-size: 48px;
+        font-weight: bold;
+    }
+
+    .job {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .info {
+        justify-content: center;
+        align-items: center;
+    }
+}
