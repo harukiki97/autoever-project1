@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { supabase } from "../../api/supabase";
 import ReactMarkdown from "react-markdown";
 import type { BlogData } from "../../types/blog";
+import styles from "./BlogDetail.module.css";
 
 function BlogDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -58,27 +59,29 @@ function BlogDetail() {
   };
 
   return (
-    <div>
+    <article className={styles.article}>
       <main>
-        <h1>{post?.title || "Loading..."}</h1>
-        <div>
+        <div className={styles.metaBlock}>
+          <h1 className={styles.h1}>{post?.title || "Loading..."}</h1>
           <div>
-            <span>
-              posted by <strong>차가민</strong>,
-            </span>
-            <span>{post?.created_at ? formatDate(post.created_at) : ""}</span>
+            <div className={styles.lowerMeta}>
+              <span>
+                posted by <strong>차가민</strong>,
+              </span>
+              <span>{post?.created_at ? formatDate(post.created_at) : ""}</span>
+            </div>
           </div>
         </div>
 
-        <article>
+        <section className={styles.section}>
           {content ? (
             <ReactMarkdown>{content}</ReactMarkdown>
           ) : (
             <p>본문을 불러오는 중이거나 작성된 내용이 없습니다.</p>
           )}
-        </article>
+        </section>
       </main>
-    </div>
+    </article>
   );
 }
 
