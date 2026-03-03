@@ -1,7 +1,9 @@
 import { useRef, useState } from 'react';
 import styles from './BizCardItem.module.css';
+import { type Tables } from '../../types/supabase';
+import logo from '../../assets/logo.png'
 
-const BizCardItem = () => {
+const BizCardItem = ({ data }: { data: Tables<'guestbook'> }) => {
     const cardRef = useRef<HTMLElement>(null);
     const [style, setStyle] = useState({});
 
@@ -48,26 +50,30 @@ const BizCardItem = () => {
                 style={style}
             >
                 <figure className={styles.image_wrapper}>
-                    <img className={styles.profile_image} src='/foil/pika.png' alt="pika" />
+                    <img
+                        className={styles.profile_image}
+                        src={data.profile_img || logo}
+                        alt={data.visitor_name}
+                    />
                     <div className={styles.foil_effect}></div>
                     <div className={styles.glare_effect}></div>
                 </figure>
 
                 <div className={styles.profile_section}>
-                    <h2 className={styles.name}>김현대</h2>
+                    <h2 className={styles.name}>{data.visitor_name}</h2>
                     <hr className={styles.divider} />
                     <div className={styles.info_section}>
                         <div className={styles.info_item}>
-                            <p className={styles.info_label}>연차</p>
-                            <p className={styles.info_value}>Senior</p>
+                            <p className={styles.info_label}>경력</p>
+                            <p className={styles.info_value}>{data.experience}년</p>
                         </div>
                         <div className={styles.info_item}>
                             <p className={styles.info_label}>직무</p>
-                            <p className={styles.info_value}>Front-end</p>
+                            <p className={styles.info_value}>{data.main_stack}</p>
                         </div>
                         <div className={styles.info_item}>
                             <p className={styles.info_label}>MBTI</p>
-                            <p className={styles.info_value}>ESFJ</p>
+                            <p className={styles.info_value}>{data.mbti}</p>
                         </div>
                     </div>
                 </div>

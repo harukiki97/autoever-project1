@@ -9,6 +9,7 @@ import ProjectDetail from './pages/ProjectDetail/ProjectDetail';
 import Projects from './pages/Projects/Projects';
 import Posts from './pages/Posts/Posts';
 import GuestBook from './pages/GuestBook/GuestBook';
+import GuestBookForm from './pages/GuestBookForm/GuestBookForm';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/posts' element={<Posts />} />
           <Route path="/posts/:slug" element={<PostDetail />} />
           <Route path="/guestbook" element={<GuestBook />} />
+          <Route path="/guestbook/write" element={<GuestBookForm />} />
         </Routes>
         <FooterContainer />
       </BrowserRouter>
