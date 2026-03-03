@@ -7,6 +7,7 @@ import AllProjects from "./pages/AllProjects/AllProjects";
 import Blog from "./pages/Blog/Blog";
 import GuestBook from "./pages/GuestBook/GuestBook";
 import ProjectDetail from "./pages/ProjectDetail/ProjectDetail";
+import BlogDetail from "./pages/BlogDetail/BlogDetail";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/projects" element={<AllProjects />} />
         <Route path="/projects/:id" element={<ProjectDetail />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/guestbook" element={<GuestBook />} />
       </Routes>
     </div>
