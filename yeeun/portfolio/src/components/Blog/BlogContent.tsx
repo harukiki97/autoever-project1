@@ -10,7 +10,7 @@ interface Props {
 
 const BlogContent = ({ post, type }: Props) => {
   return (
-    <Link to={`/blog/${post.id}`} className={styles.blogContent}>
+    <Link to={`/blog/${post.slug}`} className={styles.blogContent}>
       <h2 className={styles.title}>{post.title}</h2>
       <p className={styles.summary}>{post.summary}</p>
       <div className={styles.bottomData}>
