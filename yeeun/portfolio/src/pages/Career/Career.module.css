@@ -1,13 +1,15 @@
-.careerContainer {
-  display: flex;
-  gap: 2rem;
-}
-
 .career {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 3rem;
+  align-items: center;
+  gap: 4rem;
+}
+
+.careerContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
 }
 
 .careerContents {
