@@ -1,5 +1,6 @@
 import { leftSections, rightSections } from "./data";
 import HistorySection from "./HistorySection";
+import styles from "./Experience.module.css";
 
 function Experience() {
   return (

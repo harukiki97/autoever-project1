@@ -24,7 +24,7 @@ function Skills() {
         );
         return (
           <section key={group.category} className={styles.section}>
-            <h2>{group.category}</h2>
+            <div className={styles.categoryName}>{group.category}</div>
 
             <hr />
 

@@ -11,8 +11,8 @@ function About() {
           className={styles.profileImg}
         />
         <div className="idText">
-          <h1 className="name">차가민</h1>
-          <p className="role">Full-stack Developer</p>
+          <div className={styles.name}>차가민</div>
+          <p className={styles.role}>Full-stack Developer</p>
         </div>
       </div>
 

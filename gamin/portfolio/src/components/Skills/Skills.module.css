@@ -36,3 +36,8 @@
   align-items: center;
   gap: 16px;
 }
+
+.categoryName {
+  font-size: 2rem;
+  font-weight: bold;
+}
