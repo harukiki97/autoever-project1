@@ -26,6 +26,7 @@ function FeaturedBlogs() {
 
     fetchFeaturedBlogs();
   }, []);
+
   return (
     <section className={styles.section}>
       <div className={styles.title}>Study Note</div>
@@ -33,17 +34,18 @@ function FeaturedBlogs() {
       {/* 데이터가 성공적으로 불러와졌을 때 */}
       {blogs.length > 0 && (
         <div className={styles.cardsContainer}>
-          {/* 왼쪽 2개 카드 */}
-          <div className="left-column">
+          {/* 왼쪽 2개 카드 묶음 */}
+          <div className={styles.leftColumn}>
             {blogs[0] && (
-              <div className="card card-top-left">
+              // 공통 card 스타일과 첫 번째 카드 전용 기울기(card1) 적용
+              <div className={`${styles.card} ${styles.card1}`}>
                 <h2>{blogs[0].title}</h2>
                 <p>{blogs[0].summary}</p>
                 <Link to={`/blogs/${blogs[0].slug}`}>→ details</Link>
               </div>
             )}
             {blogs[2] && (
-              <div className="card card-bottom-left">
+              <div className={`${styles.card} ${styles.card3}`}>
                 <h2>{blogs[2].title}</h2>
                 <p>{blogs[2].summary}</p>
                 <Link to={`/blogs/${blogs[2].slug}`}>→ details</Link>
@@ -51,8 +53,9 @@ function FeaturedBlogs() {
             )}
           </div>
 
+          {/* 오른쪽 1개 카드 */}
           {blogs[1] && (
-            <div className="card card-bottom-left">
+            <div className={`${styles.card} ${styles.card2}`}>
               <h2>{blogs[1].title}</h2>
               <p>{blogs[1].summary}</p>
               <Link to={`/blogs/${blogs[1].slug}`}>→ details</Link>

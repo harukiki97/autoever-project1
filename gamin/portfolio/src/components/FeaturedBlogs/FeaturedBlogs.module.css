@@ -1,18 +1,3 @@
-.section {
-  padding: 80px 48px;
-}
-
-.title {
-  font-size: 4rem;
-  font-weight: bold;
-}
-
-.viewAll {
-  display: flex;
-  justify-content: center;
-  color: #0046ff;
-}
-
 /* .cardsContainer {
   display: flex;
   justify-content: center;
@@ -21,3 +6,109 @@
   padding-top: 72px;
   padding-bottom: 120px;
 } */
+
+.section {
+  padding: 80px 48px;
+  overflow: hidden; /* 그림자나 회전된 카드가 영역 밖으로 삐져나가는 것을 방지 */
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+/* 카드들을 감싸는 전체 레이아웃 */
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px; /* 왼쪽 단과 오른쪽 카드 사이의 간격 */
+  padding-top: 40px;
+  padding-bottom: 120px;
+}
+
+/* 왼쪽의 카드 2개를 묶어주는 세로 단 */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 80px; /* 위아래 카드 사이의 간격 */
+}
+
+/* --- 공통 카드 디자인 (피그마 수치 반영) --- */
+.card {
+  width: 480px;
+  height: 260px;
+  background: #ffffff;
+  /* 피그마에서 복사한 강렬한 그림자 */
+  box-shadow:
+    -40px 80px 35px rgba(14, 30, 37, 0.13),
+    -4px -2px 4px rgba(14, 30, 37, 0.12);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: transform 0.3s ease; /* 호버 애니메이션용 */
+}
+
+/* 마우스를 올렸을 때 살짝 위로 떠오르는 효과 (선택사항) */
+.card:hover {
+  transform: translateY(-10px) scale(1.02) !important;
+}
+
+.card h2 {
+  font-weight: 700;
+  font-size: 24px;
+  color: #111111;
+  margin: 0 0 16px 0;
+}
+
+.card p {
+  font-weight: 400;
+  font-size: 16px;
+  color: #666666;
+  margin: 0 0 24px 0;
+  line-height: 1.4;
+  /* 글이 길어지면 2줄까지만 보이고 말줄임표(...) 처리 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card a {
+  font-weight: 400;
+  font-size: 16px;
+  color: #0046ff;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+/* --- 개별 카드 기울기 설정 --- */
+.card1 {
+  transform: rotate(-3.73deg); /* 피그마에서 요청하신 각도 */
+}
+
+.card2 {
+  transform: rotate(2deg); /* 자연스러움을 위해 반대로 살짝 꺾음 */
+}
+
+.card3 {
+  transform: rotate(-2.5deg); /* 세 번째 카드도 살짝 다르게 꺾음 */
+}
+
+.viewAll {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.viewAll {
+  display: flex;
+  justify-content: center;
+  color: #0046ff;
+}
