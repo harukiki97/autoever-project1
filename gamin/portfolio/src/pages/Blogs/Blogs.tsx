@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { BlogGeneralData, FilterType } from "../../types/blog";
 import { supabase } from "../../api/supabase";
+import { Link } from "react-router-dom";
 
 function Blogs() {
   const [posts, setPosts] = useState<BlogGeneralData[]>([]);
@@ -51,17 +52,19 @@ function Blogs() {
 
       <section>
         {filteredPosts.map((post) => (
-          <article key={post.id}>
-            <h2>{post.title}</h2>
-            <p>{post.summary}</p>
+          <Link key={post.id} to={`/blogs/${post.slug}`}>
+            <article key={post.id}>
+              <h2>{post.title}</h2>
+              <p>{post.summary}</p>
 
-            <div>
-              <time dateTime={post.created_at}>
-                {formatDate(post.created_at)}
-              </time>
-              <span>{post.type === "BLOG" ? "POST" : "TIL"}</span>
-            </div>
-          </article>
+              <div>
+                <time dateTime={post.created_at}>
+                  {formatDate(post.created_at)}
+                </time>
+                <span>{post.type === "BLOG" ? "POST" : "TIL"}</span>
+              </div>
+            </article>
+          </Link>
         ))}
       </section>
     </main>
