@@ -1,1 +1,5 @@
-{}
+{
+  "dependencies": {
+    "@uiw/react-md-editor": "^4.0.11"
+  }
+}
