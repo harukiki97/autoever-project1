@@ -1,0 +1,22 @@
+.allProjects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 4rem;
+  gap: 4rem;
+  width: 80%;
+}
+
+.projectList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .projectList {
+    grid-template-columns: 1fr;
+  }
+}

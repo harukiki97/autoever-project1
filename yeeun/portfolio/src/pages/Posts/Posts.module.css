@@ -1,0 +1,112 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  width: 100%;
+}
+
+/* 전체 레이아웃 */
+.posts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  justify-items: center;
+  padding: 0 6rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.rightColumn {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* 카드 */
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 4rem;
+  gap: 1rem;
+  max-width: 490px;
+  max-height: 290px;
+  border-radius: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: #222;
+}
+
+.leftColumn .post {
+  box-shadow:
+    -40px 80px 35px rgba(14, 30, 37, 0.13),
+    -4px -2px 4px rgba(14, 30, 37, 0.12);
+
+  /* 회전 + 살짝 마름모 */
+  transform: rotate(-3.7deg) skewY(-2deg);
+}
+
+.rightColumn .post {
+  box-shadow:
+    40px 80px 35px rgba(14, 30, 37, 0.13),
+    4px -2px 8px rgba(14, 30, 37, 0.12);
+
+  /* 반대 방향 */
+  transform: rotate(3.7deg) skewY(2deg);
+}
+/* 카드 내부 */
+.post h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.5;
+
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  text-wrap: balance; /* 줄 길이 균형 맞춤 */
+}
+
+.post p {
+  padding: 0 1rem;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666666;
+
+  /* 두 줄까지만 보여주고 말줄임 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.more {
+  all: unset;
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  color: #0046ff;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  .posts {
+    grid-template-columns: 1fr;
+  }
+
+  .rightColumn {
+    align-items: stretch;
+  }
+}

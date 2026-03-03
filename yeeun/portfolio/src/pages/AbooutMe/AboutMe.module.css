@@ -1,0 +1,39 @@
+.aboutMe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 5rem 10rem;
+  gap: 3rem;
+  color: #333;
+}
+
+.profileContainer {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.profileContainer img {
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.profileContainer .name {
+  font-size: 4rem;
+  font-weight: bolder;
+}
+
+.role {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.bio {
+  padding: 0 5rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}

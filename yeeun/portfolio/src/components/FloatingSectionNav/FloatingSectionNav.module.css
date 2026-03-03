@@ -1,0 +1,37 @@
+/* FloatingSectionNav.module.css */
+
+.floatingNav {
+  position: fixed;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  padding: 1.5rem 1.2rem;
+
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+
+  border-radius: 16px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  z-index: 999;
+}
+
+.floatingNav button {
+  all: unset;
+  cursor: pointer;
+
+  font-size: 13px;
+  color: #888;
+  transition: all 0.2s ease;
+}
+
+.floatingNav button:hover {
+  color: #0046ff;
+  transform: translateX(-4px);
+}

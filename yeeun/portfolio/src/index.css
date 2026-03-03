@@ -1,0 +1,185 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  background-color: #f9fafb;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* 여기부터는 프로젝트에 필요한 컴포넌트의 전역 설정 */
+/* 섹션 타이틀 */
+.section-title {
+  font-size: 4rem;
+  font-weight: bolder;
+}
+
+/* 뒤로가기 버튼 */
+/* 버튼 */
+.backBtn {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+
+  color: #0046ff;
+  background-color: #f0f5ff;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  transition: all 0.2s ease;
+}
+
+.backBtn:hover {
+  background-color: #0046ff;
+  color: #ffffff;
+  border-color: #0046ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 70, 255, 0.2);
+}
+
+.backBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 70, 255, 0.1);
+}
+
+.backBtn::before {
+  content: "←";
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.backBtn:hover::before {
+  transform: translateX(-3px); /* 호버 시 화살표가 왼쪽으로 움찔 */
+}

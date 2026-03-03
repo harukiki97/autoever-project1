@@ -1,0 +1,39 @@
+.blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 4rem;
+  gap: 4rem;
+  width: 80%;
+}
+
+.filter {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.filter button {
+  all: unset;
+  padding: 10px 12px;
+  border-radius: 0.5rem;
+  background-color: none;
+  font-size: 14px;
+  font-weight: normal;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.filter button.active {
+  color: #0038cc;
+  font-weight: bold;
+  background-color: #e6edff;
+}
+
+.blogItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
