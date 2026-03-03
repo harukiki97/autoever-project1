@@ -51,7 +51,7 @@ export const rightSections: HistorySection[] = [
         date: "2025 - 현재",
         title: "현대오토에버 모빌리티 SW 스쿨",
         subtitle: "웹/앱 개발 과정",
-        descriptions: ["이렇고 저렇고 이런 저런 내용을 배움"],
+        descriptions: ["실무 중심의 프런트엔드와 백엔드 내용을 배움"],
         isActive: true,
         iconType: "burst",
       },

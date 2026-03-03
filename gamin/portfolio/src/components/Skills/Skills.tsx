@@ -7,7 +7,7 @@ function Skills() {
     { category: "Frontend", techNames: ["React", "React Query", "Redux"] },
     {
       category: "Backend",
-      techNames: ["Express", "Node.js"],
+      techNames: ["Spring"],
     },
     {
       category: "Others",
