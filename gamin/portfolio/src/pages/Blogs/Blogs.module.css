@@ -1,0 +1,69 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 140px;
+  padding-bottom: 48px;
+}
+
+.h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+  margin-top: 48px;
+  margin-bottom: 24px;
+}
+
+.button {
+  background: transparent; /* 기본 배경 투명 */
+  border: none; /* 기본 테두리 제거 */
+  padding: 8px 24px;
+  font-size: 16px;
+  color: #6b7280;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out; /* 부드러운 색상 전환 */
+}
+
+.active {
+  background-color: #e6edff;
+  color: #0038cc;
+}
+
+.listSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid #6b7280;
+  border-radius: 8px;
+  padding: 24px;
+  transition: all 0.2s ease-in-out; /* 부드러운 호버 효과 */
+}
+
+.card:hover {
+  border-color: #0046ff;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: bold;
+}

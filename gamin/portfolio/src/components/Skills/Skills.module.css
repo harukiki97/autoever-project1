@@ -1,0 +1,43 @@
+.skills {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.skills img {
+  width: 100px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.section hr {
+  border: none; /* 브라우저의 기본 음영 렌더링을 없앱니다 */
+  border-top: 1px solid #0046ff; /* 1px 두께의 실선(solid) 파란색으로 지정합니다 */
+  width: 100%; /* 선이 영역을 꽉 채우도록 설정합니다 */
+}
+
+.techList {
+  display: grid;
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /* 전체 너비를 정확히 4등분(25%씩) 합니다 */
+}
+
+.techItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.categoryName {
+  font-size: 2rem;
+  font-weight: bold;
+}

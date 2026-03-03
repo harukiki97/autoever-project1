@@ -1,0 +1,35 @@
+.about {
+  margin-top: 48px;
+}
+
+.idCard {
+  display: flex;
+  justify-content: flex-start;
+  gap: 48px;
+  align-items: center;
+}
+
+.profileImg {
+  width: 440px;
+  height: 440px;
+  object-fit: cover; /* 사진 비율이 깨지지 않고 꽉 차게 잘리도록 설정 */
+  border-radius: 50%;
+  margin-left: 24px;
+}
+
+.bio {
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.name {
+  font-size: 4rem; /* 원하는 크기로 숫자를 변경해 보세요 */
+  font-weight: bold; /* 글씨 굵기를 지정하고 싶다면 이 속성을 추가하세요 */
+}
+
+.role {
+  font-size: 1.5rem;
+  font-weight: bold;
+}

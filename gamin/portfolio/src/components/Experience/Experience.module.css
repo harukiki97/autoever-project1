@@ -1,0 +1,25 @@
+.title {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.section {
+  padding: 144px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.gridContainer {
+  display: flex;
+  gap: 80px;
+  width: 100%;
+}
+
+.column {
+  flex: 1; /* 양쪽 단이 1:1 비율로 동일한 너비를 가지게 합니다. */
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}

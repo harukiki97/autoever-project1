@@ -1,0 +1,31 @@
+.itemContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.leftColumn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.date {
+  color: #6b7280;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.descriptionList {
+  padding-left: 24px;
+  font-size: 14px;
+  color: #374151;
+}

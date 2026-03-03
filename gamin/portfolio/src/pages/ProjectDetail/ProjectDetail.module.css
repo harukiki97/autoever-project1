@@ -1,0 +1,57 @@
+.article {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 720px;
+}
+
+.h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.metaTitle {
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.fullMeta {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #0046ff;
+  gap: 24px;
+  padding-bottom: 48px;
+}
+
+.dateNIsGroup {
+  display: flex;
+  gap: 24px;
+}
+
+.metaBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.techIconContainer {
+  display: flex;
+  gap: 8px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.deployLink a {
+  color: #0000ee; /* 브라우저 기본 파란색 (프로젝트 메인 컬러인 #0046ff 를 쓰셔도 예쁩니다!) */
+  text-decoration: underline; /* 밑줄 긋기 */
+  cursor: pointer; /* 마우스 올렸을 때 손가락 모양 */
+}
+
+.deployLink a:visited {
+  color: #551a8b; /* 브라우저 기본 방문한 링크 보라색 */
+}

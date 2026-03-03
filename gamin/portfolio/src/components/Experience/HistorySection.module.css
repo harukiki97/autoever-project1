@@ -1,0 +1,22 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #0046ff;
+  gap: 16px;
+}
+
+.title::before,
+.title::after {
+  content: "";
+  flex: 1; /* 선이 남는 좌우 공간을 모두 꽉 채우도록 만듭니다 */
+  height: 1px;
+  background-color: #d1d5db;
+}
