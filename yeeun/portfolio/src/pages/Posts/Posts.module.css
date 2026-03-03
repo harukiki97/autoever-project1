@@ -26,6 +26,7 @@
 .rightColumn {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 /* 카드 */
@@ -39,6 +40,8 @@
   max-height: 290px;
   border-radius: 0.5rem;
   text-align: center;
+  text-decoration: none;
+  color: #222;
 }
 
 .leftColumn .post {
@@ -47,7 +50,7 @@
     -4px -2px 4px rgba(14, 30, 37, 0.12);
 
   /* 회전 + 살짝 마름모 */
-  transform: rotate(-3.7deg) skewY(-3deg);
+  transform: rotate(-3.7deg) skewY(-2deg);
 }
 
 .rightColumn .post {
@@ -56,7 +59,7 @@
     4px -2px 8px rgba(14, 30, 37, 0.12);
 
   /* 반대 방향 */
-  transform: rotate(3.7deg) skewY(3deg);
+  transform: rotate(3.7deg) skewY(2deg);
 }
 /* 카드 내부 */
 .post h2 {

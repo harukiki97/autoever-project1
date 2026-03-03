@@ -1,6 +1,6 @@
 import styles from "./ProjectDetail.module.css";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import type { Project } from "../../types";
 import { supabase } from "../../api/supabase";
 import { techMap } from "../../utils/getIcon";
@@ -9,6 +9,7 @@ import MarkdownViewer from "../../components/MarkDownViewer/MarkDownViewer";
 
 const ProjectDetail = () => {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -107,6 +108,12 @@ const ProjectDetail = () => {
         </div>
       </div>
       <MarkdownViewer content={markdownContent} />
+
+      <footer className={styles.footer}>
+        <button onClick={() => navigate("/projects")} className={`backBtn`}>
+          목록으로 돌아가기
+        </button>
+      </footer>
     </div>
   );
 };
