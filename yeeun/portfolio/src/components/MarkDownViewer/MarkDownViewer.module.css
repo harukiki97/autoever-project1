@@ -1,0 +1,132 @@
+/* 시간 관계상 사람이 많이 사용하면 마크다운 css 템플릿 참고 / 일부 프로젝트 디자인에 맞게 변경 */
+/* Notion Style Markdown CSS - Main Color: #0046FF */
+.markdownBody {
+  font-family:
+    "Pretendard",
+    "Noto Sans KR",
+    -apple-system,
+    sans-serif;
+  line-height: 1.75;
+  color: #334155;
+  width: 100%;
+}
+
+/* 제목 스타일링 */
+.markdownBody h1,
+.markdownBody h2,
+.markdownBody h3 {
+  color: #0f172a;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.markdownBody h1 {
+  font-size: 2.4rem;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+.markdownBody h2 {
+  font-size: 1.8rem;
+}
+.markdownBody h3 {
+  font-size: 1.4rem;
+}
+
+/* 본문 및 리스트 */
+.markdownBody p {
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  word-break: keep-all;
+}
+.markdownBody ul,
+.markdownBody ol {
+  padding-left: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+.markdownBody li {
+  margin-bottom: 0.4rem;
+}
+
+/* 링크 및 인용구 (#0046FF 포인트) */
+.markdownBody a {
+  color: #0046ff;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.markdownBody a:hover {
+  border-bottom: 1px solid #0046ff;
+}
+.markdownBody blockquote {
+  margin: 1.5rem 0;
+  padding: 0.2rem 1.5rem;
+  border-left: 4px solid #0046ff;
+  color: #475569;
+  font-style: italic;
+}
+
+/* 테이블 스타일링 */
+.markdownBody table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px #e2e8f0;
+}
+.markdownBody th {
+  background-color: #f8fafc;
+  font-weight: 600;
+}
+.markdownBody th,
+.markdownBody td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+.markdownBody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+/* 인라인 코드 스타일 */
+.markdownBody code {
+  background-color: #f1f3f8;
+  color: #0046ff;
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+  font-size: 0.85em;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 500;
+}
+/* 코드 블록(SyntaxHighlighter) 내부 투명화 */
+.markdownBody pre code,
+.markdownBody pre code span {
+  background-color: transparent !important;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* 코드 블록 하이라이팅 커스텀 */
+.markdownBody pre span.token.keyword,
+.markdownBody pre span.token.operator {
+  color: #0046ff !important;
+  font-weight: 600;
+}
+.markdownBody pre span.token.function {
+  color: #2563eb !important;
+}
+.markdownBody pre span.token.comment {
+  color: #94a3b8 !important;
+  font-style: italic;
+}
+.markdownBody pre span.token.string {
+  color: #059669 !important;
+}
+
+.markdownBody img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
