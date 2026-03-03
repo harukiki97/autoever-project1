@@ -1,0 +1,46 @@
+/* src/styles/global.css */
+:root {
+  /* 피그마의 색상 팔레트 기반 (임의의 색상값, 실제 피그마 값으로 변경하세요) */
+  --primary-color: #0056b3; 
+  --text-main: #222222;
+  --text-sub: #666666;
+  --bg-light: #ffffff;
+  --bg-gray: #f5f5f7;
+  --border-color: #e0e0e0;
+  
+  /* 폰트 설정 (예: Pretendard) */
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--text-main);
+  background-color: var(--bg-light);
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* src/styles/global.css 에 추가 */
+html {
+  scroll-behavior: smooth; /* 핵심! 앵커 이동 시 부드럽게 스크롤됩니다. */
+}
+
+/* 헤더가 화면 상단에 고정되도록 설정 (피그마 디자인 참고) */
+.header {
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-light);
+  z-index: 100;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* 각 섹션이 화면에 꽉 차거나 적절한 여백을 가지도록 설정 */
+section {
+  padding: 80px 20px; /* 헤더 높이만큼 패딩을 주어 콘텐츠가 가려지지 않게 합니다 */
+  min-height: 50vh; 
+}
