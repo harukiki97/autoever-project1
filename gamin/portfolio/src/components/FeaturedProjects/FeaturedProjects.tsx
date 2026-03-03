@@ -3,6 +3,7 @@ import ProjectGrid from "../ProjectGrid/ProjectGrid";
 import { useEffect, useState } from "react";
 import type { Project } from "../../types/project";
 import { supabase } from "../../api/supabase";
+import styles from "./FeaturedProjects.module.css";
 
 function FeaturedProjects() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -27,10 +28,12 @@ function FeaturedProjects() {
   }, []);
 
   return (
-    <section>
-      <h1>프로젝트</h1>
+    <section className={styles.section}>
+      <div className={styles.title}>프로젝트</div>
       <ProjectGrid projects={projects} variant="main" />
-      <Link to="/projects">→ View All Projects</Link>
+      <Link to="/projects" className={styles.linkTo}>
+        → View All Projects
+      </Link>
     </section>
   );
 }

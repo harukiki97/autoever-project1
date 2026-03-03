@@ -29,7 +29,7 @@ function ProjectCard({ project, layout }: ProjectCardProps) {
       .filter((iconData) => iconData !== undefined);
 
     return (
-      <div className="techIconsWrapper">
+      <div className={styles.iconWrapper}>
         {resolvedTechIcons.map((item) => (
           <img
             key={item.name}
@@ -44,39 +44,44 @@ function ProjectCard({ project, layout }: ProjectCardProps) {
   };
 
   return (
-    <Link to={`/projects/${project.slug}`} className={`${layoutClass}`}>
+    <Link
+      to={`/projects/${project.slug}`}
+      className={`${styles.card} ${layoutClass}`}
+    >
       {/* 썸네일 */}
-      <div>
+      <div className={styles.thumbnailWrapper}>
         {project.thumbnail_url ? (
-          // 사진 크기 임의 지정
           <img
             src={project.thumbnail_url}
             alt={project.title}
-            width={400}
-            height={320}
+            className={
+              styles.thumbnail
+            } /* width 하드코딩 제거, CSS 클래스 적용 */
           />
         ) : (
-          <div></div>
+          <div className={styles.thumbnail}></div>
         )}
       </div>
 
-      {/* 텍스트 부분 */}
-      <div>
-        <div>
-          <h3>{project.title}</h3>
-          <div>
+      <div className={styles.fullContent}>
+        {/* 텍스트 부분 */}
+        <div className={styles.textContent}>
+          <div className={styles.title}>{project.title}</div>
+          <div className={styles.meta}>
             <span>
               {formatDate(project.start_date)} ~{" "}
               {project.end_date ? formatDate(project.end_date) : ""}
             </span>
-            <span>{project.is_team ? "팀 프로젝트" : "개인 프로젝트"}</span>
+            <span className={project.is_team ? styles.team : styles.personal}>
+              {project.is_team ? "팀 프로젝트" : "개인 프로젝트"}
+            </span>
           </div>
-          <p>{project.summary}</p>
+          <p className={styles.summary}>{project.summary}</p>
         </div>
-      </div>
 
-      {/* 기술 스택 부분 */}
-      <div>{renderTechIcons()}</div>
+        {/* 기술 스택 부분 */}
+        {renderTechIcons()}
+      </div>
     </Link>
   );
 }
